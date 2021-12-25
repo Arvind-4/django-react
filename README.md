@@ -16,9 +16,9 @@ $PROJECT_ROOT
 ├── backend
 │   # React files
 ├── src
-│   # Non-react modules
-├── templates
 │   # Django Templates
+├── templates
+│   
 ```
 ---
 
