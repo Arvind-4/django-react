@@ -18,7 +18,6 @@ $PROJECT_ROOT
 ├── src
 │   # Django Templates
 ├── templates
-│   
 ```
 ---
 
