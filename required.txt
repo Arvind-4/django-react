@@ -1,0 +1,10 @@
+django
+Brotli
+dj-database-url
+django-brotli
+django-cors-headers
+django-debreach
+django-webpack-loader
+djangorestframework
+psycopg2
+whitenoise

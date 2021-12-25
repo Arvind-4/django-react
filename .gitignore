@@ -1,0 +1,16 @@
+# frontend dependencies
+
+node_modules/
+public/
+build/
+assets/
+
+webpack-stats.json
+
+# backend dependies
+
+Lib/
+Include/
+Scripts/
+
+__pycache__/
