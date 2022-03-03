@@ -1,10 +1,8 @@
-django
-Brotli
-dj-database-url
+Django
 django-brotli
 django-cors-headers
 django-debreach
-django-webpack-loader
 djangorestframework
-psycopg2
+psycopg2-binary
 whitenoise
+dj-database-url
