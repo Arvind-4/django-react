@@ -58,6 +58,12 @@ pip install -r requirements.txt
 > pip install -r required.txt
 > ``
 
+- Install Dependencies (For Poetry)
+
+```
+poetry install
+```
+
 - Make Migrations
 
 ```
@@ -75,10 +81,25 @@ python manage.py runserver
 - Install Dependencies
 
 ```
-yarn install
+cd frontend/
+yarn
 ```
 - Run Vite
 
 ```
 yarn dev
 ```
+<br/>
+
+
+> **_NOTE:_**     To Use Django & React in With hot reload in Django Templates Run: <br/>
+> ``` 
+> cd web/
+> python manage.py runserver
+> ```
+> and 
+> ```
+> cd frontend/
+> yarn dev
+> ``` 
+
