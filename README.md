@@ -1,23 +1,25 @@
 
-# Django-React-Typescript-Webpack Starter Template
+# Django-React-Typescript-Vite Starter Template
 
 ## Stack
 
 - [React](https://reactjs.org/) - A JavaScript library for building user interfaces.
 - [Django](https://www.djangoproject.com/) - Django makes it easier to build better web apps more quickly and with less code.
-- [Webpack](https://webpack.js.org/) - Bundle Your Assets
+- [Vite](https://vitejs.dev/) - Next Generation Frontend Tooling
 - [Typescript](https://www.typescriptlang.org/) - JavaScript with syntax for types.
 
 ## Project structure
 
 ```
 $PROJECT_ROOT
-│   # backend file
-├── backend
-│   # React files
-├── src
-│   # Django Templates
-├── templates
+│   
+├── web # backend file
+│   
+├── frontend # React files
+│   
+├── web/templates # Django Templates
+│   
+├── web/static-dev # Django Static Files
 ```
 ---
 
@@ -42,7 +44,7 @@ python -m venv .
 - Activate Virtual Environment
 
 ```
-source Scripts/activate
+source bin/activate
 ```
 
 - Install Dependencies
@@ -75,7 +77,7 @@ python manage.py runserver
 ```
 yarn install
 ```
-- Run Webpack
+- Run Vite
 
 ```
 yarn dev
