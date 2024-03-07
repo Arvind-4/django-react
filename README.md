@@ -29,9 +29,9 @@ $PROJECT_ROOT
 - Clone Repo
 
 ```bash
-mkdir django_react
-cd django_react
-git clone https://github.com/Arvind-4/django-react-typescript-webpack.git .
+mkdir django-react
+cd django-react
+git clone https://github.com/Arvind-4/django-react.git .
 ```
 - Create Virtual Environment for Python
 
