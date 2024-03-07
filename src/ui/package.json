@@ -1,0 +1,82 @@
+{
+  "name": "ui",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "author": {
+    "email": "pingarvindforquestions@gmail.com",
+    "name": "Arvind .A",
+    "url": "https://arvind11.vercel.app"
+  },
+  "categories": [
+    "Other"
+  ],
+  "description": "A simple UI for the Django backend",
+  "license": "MIT",
+  "displayName": "UI",
+  "homepage": "",
+  "keywords": [
+    "react",
+    "vite",
+    "typescript",
+    "django",
+    "ui"
+  ],
+  "readme": "A simple UI for the Django backend",
+  "repository": {
+    "type": "git",
+    "url": "git+",
+    "directory": "ui"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "format": "prettier --write .",
+    "preview": "vite preview",
+    "collect": "pnpm build && pnpm build-rename && pnpm copy-buildfiles",
+    "build-rename": "pnpm build-rename-js && pnpm build-rename-css",
+    "build-rename-js": "renamer --regex --find 'index\\-[^\\.]+\\.js' --replace 'index.min.js' dist/assets/*.js",
+    "build-rename-css": "renamer --regex --find 'index\\-[^\\.]+\\.css' --replace 'index.min.css' dist/assets/*.css",
+    "copy-buildfiles": "pnpm copy-build-js && pnpm copy-build-css && pnpm copy-build-images",
+    "copy-build-js": "copyfiles -f 'dist/assets/*.js' '../staticfiles/js/'",
+    "copy-build-css": "copyfiles -f 'dist/assets/*.css' '../staticfiles/css/'",
+    "copy-build-images": "copyfiles -f 'dist/*.{svg,png,jpeg}' '../staticfiles/'",
+    "collectstatic": "pnpm collect && python ../manage.py collectstatic --no-input --clear"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.25",
+    "@types/react": "^18.2.56",
+    "@types/react-dom": "^18.2.19",
+    "@typescript-eslint/eslint-plugin": "^7.0.2",
+    "@typescript-eslint/parser": "^7.0.2",
+    "@vitejs/plugin-react": "latest",
+    "autoprefixer": "^10.4.18",
+    "copyfiles": "^2.0.0",
+    "eslint": "^8.56.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "postcss": "^8.4.35",
+    "prettier": "^3.2.5",
+    "renamer": "^0.7.0",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.2.2",
+    "vite": "^5.1.4",
+    "vite-plugin-react": "^4.0.1"
+  }
+}

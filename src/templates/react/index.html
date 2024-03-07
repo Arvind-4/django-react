@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block head %}
+  {% if debug %}
+    <script type="module" src="http://localhost:3000/@vite/client"></script>
+    <script type="module">
+      import RefreshRuntime from 'http://localhost:3000/@react-refresh'
+      if (RefreshRuntime) {
+        RefreshRuntime.injectIntoGlobalHook(window)
+        window.$RefreshReg$ = () => {}
+        window.$RefreshSig$ = () => (type) => type
+        window.__vite_plugin_react_preamble_installed__ = true
+      }
+    </script>
+    <script type="module" src="http://localhost:3000/main.tsx"></script>
+  {% endif %}
+{% endblock head %}
+{% block content %}<div id="root"></div>{% endblock %}
