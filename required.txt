@@ -1,8 +1,0 @@
-Django
-django-brotli
-django-cors-headers
-django-debreach
-djangorestframework
-psycopg2-binary
-whitenoise
-dj-database-url
