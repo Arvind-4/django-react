@@ -1,5 +1,4 @@
-
-# Django-React-Typescript-Vite Starter Template
+# Django-React Starter Template
 
 ## Stack
 
@@ -13,13 +12,13 @@
 ```
 $PROJECT_ROOT
 │   
-├── web # backend file
+├── src/backend # backend file
 │   
-├── frontend # React files
+├── src/ui # React files
 │   
-├── web/templates # Django Templates
+├── src/templates # Django Templates
 │   
-├── web/static-dev # Django Static Files
+├── src/staticfiles # Django Static Files
 ```
 ---
 
@@ -29,50 +28,49 @@ $PROJECT_ROOT
 
 - Clone Repo
 
-```
+```bash
 mkdir django_react
 cd django_react
 git clone https://github.com/Arvind-4/django-react-typescript-webpack.git .
 ```
 - Create Virtual Environment for Python
 
-```
-pip install virtualenv
-python -m venv .
+```bash
+python3.10 -m pip install virtualenv
+python3.10 -m virtualenv .
 ```
 
 - Activate Virtual Environment
 
-```
+```bash
 source bin/activate
 ```
 
 - Install Dependencies
 
-```
+```bash
+cd src
 pip install -r requirements.txt
 ```
 
-> **_NOTE:_**     To Install Latest Dependencies run command <br/>
-> ``
-> pip install -r required.txt
-> ``
-
 - Install Dependencies (For Poetry)
 
-```
+```bash
+cd src
 poetry install
 ```
 
 - Make Migrations
 
-```
+```bash
+cd src
 python manage.py makemigrations
 python manage.py migrate
 ```
 - Run Server
 
-```
+```bash
+cd src
 python manage.py runserver
 ```
 
@@ -80,26 +78,20 @@ python manage.py runserver
 
 - Install Dependencies
 
-```
-cd frontend/
-yarn
+```bash
+cd src/ui
+pnpm i
 ```
 - Run Vite
 
+```bash
+cd src/ui
+pnpm dev
 ```
-yarn dev
+
+- For production 
+
+```bash
+cd src/ui
+pnpm collectstatic
 ```
-<br/>
-
-
-> **_NOTE:_**     To Use Django & React in With hot reload in Django Templates Run: <br/>
-> ``` 
-> cd web/
-> python manage.py runserver
-> ```
-> and 
-> ```
-> cd frontend/
-> yarn dev
-> ``` 
-
