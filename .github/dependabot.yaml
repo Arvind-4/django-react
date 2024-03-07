@@ -1,0 +1,10 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "src/ui"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "pip"
+    directory: "src"
+    schedule:
+      interval: "weekly"
