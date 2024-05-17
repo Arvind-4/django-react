@@ -30,7 +30,7 @@ migrations:
 	python src/manage.py migrate --noinput
 
 ui-install:
-	pnpm install root=src/ui
+	pnpm install root=./src/ui
 
 collectstatic-ui: 
 	cd src/ui && pnpm collectstatic
@@ -43,7 +43,7 @@ clean-static:
 collect: clean-static collectstatic-ui 
 
 dev:
-	python src/manage.py runserver
+	python src/manage.py runserver & cd src/ui && pnpm dev
 
 venv-activate:
 	python3.10 -m venv .
