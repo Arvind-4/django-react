@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+  backend:
+    container_name: django-backend
+    build:
+      context: .
+      dockerfile: backend.Dockerfile
+    ports:
+      - "8888:8000"
+    env_file:
+      - .env
+    environment:
+      - DJANGO_IN_REACT=0
+  
+  frontend:
+    container_name: react-frontend
+    build:
+      context: .
+      dockerfile: frontend.Dockerfile
+    ports:
+      - "3333:3000"
+
+  nginx:
+    container_name: nginx
+    build:
+      context: .
+      dockerfile: nginx.Dockerfile
+    volumes:
+      - static:/app/static-cdn-local/
+    ports:
+      - 80:80
+      - 443:443
+    depends_on:
+      - backend
+      - frontend
+
+volumes:
+  static:
