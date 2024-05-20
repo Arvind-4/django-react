@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, re_path
 
+from backend.env import config
 from api.views import HomeView, HelloAPIView, AboutView, DateAPIView
 
 djangourlpatterns = [
@@ -32,4 +33,9 @@ reacturlpatterns = [
     re_path(r"^about/$", HomeView.as_view(), name="about"),
 ]
 
-urlpatterns = djangourlpatterns + reacturlpatterns
+DJANGO_IN_REACT = config("DJANGO_IN_REACT", default=True, cast=bool)
+
+if DJANGO_IN_REACT:
+    urlpatterns = djangourlpatterns + reacturlpatterns
+else:
+    urlpatterns = djangourlpatterns
