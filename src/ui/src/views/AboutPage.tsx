@@ -1,5 +1,3 @@
 export default function AboutPage() {
-  return (
-    <main>About Us!</main>
-  );
+  return <main>About Us!</main>;
 }

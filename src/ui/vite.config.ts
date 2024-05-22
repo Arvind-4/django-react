@@ -3,7 +3,6 @@ import react from "@vitejs/plugin-react";
 
 let baseUrl = process.env.NODE_ENV === "production" ? "/static/" : "/";
 
-
 const isDjango = process.env.DJANGO === "true";
 
 if (isDjango) {
