@@ -3,10 +3,7 @@
   "builds": [
     {
       "src": "main.py",
-      "use": "@vercel/python",
-      "config": {
-        "runtime": "python3.9"
-      }
+      "use": "@vercel/python"
     },
     {
       "src": "build.sh",
