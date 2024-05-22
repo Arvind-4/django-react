@@ -18,8 +18,8 @@ STATICFILES_DIRS = [
     BASE_DIR / "staticfiles",
 ]
 
-STATIC_ROOT = BASE_DIR.parent / "static-cdn-local"
-MEDIA_ROOT = BASE_DIR.parent / "media-cdn-local"
+STATIC_ROOT = BASE_DIR.parent / 'staticfiles_build' / 'static'
+MEDIA_ROOT = BASE_DIR.parent / 'mediafiles_build' / 'media'
 
 APPEND_SLASH = True
 ADMIN_URL = config("DJANGO_ADMIN_URL", cast=str)
