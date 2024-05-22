@@ -21,10 +21,10 @@ python3 -m pip install -r requirements.txt
 #     --noinput || true
 
 echo "Running npm install..."
-pnpm bootstrap
+npm run bootstrap
 
 echo "Running npm Production..."
-pnpm collect
+npm run collect
 
 echo "Collecting static files..."
 python3 src/manage.py collectstatic --noinput --clear

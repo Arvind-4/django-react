@@ -41,15 +41,15 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "format": "prettier --write .",
     "preview": "vite preview",
-    "collect": "pnpm build && pnpm build-rename && pnpm copy-buildfiles",
-    "build-rename": "pnpm build-rename-js && pnpm build-rename-css",
+    "collect": "npm run build && npm run build-rename && npm run copy-buildfiles",
+    "build-rename": "npm run build-rename-js && npm run build-rename-css",
     "build-rename-js": "renamer --regex --find 'index\\-[^\\.]+\\.js' --replace 'index.min.js' dist/assets/*.js",
     "build-rename-css": "renamer --regex --find 'index\\-[^\\.]+\\.css' --replace 'index.min.css' dist/assets/*.css",
-    "copy-buildfiles": "pnpm copy-build-js && pnpm copy-build-css && pnpm copy-build-images",
+    "copy-buildfiles": "npm run copy-build-js && npm run copy-build-css && npm run copy-build-images",
     "copy-build-js": "copyfiles -f 'dist/assets/*.js' '../staticfiles/js/'",
     "copy-build-css": "copyfiles -f 'dist/assets/*.css' '../staticfiles/css/'",
     "copy-build-images": "copyfiles -f 'dist/*.{svg,png,jpeg}' '../staticfiles/'",
-    "collectstatic": "pnpm collect && python ../manage.py collectstatic --no-input --clear"
+    "collectstatic": "npm run collect && python ../manage.py collectstatic --no-input --clear"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -58,7 +58,8 @@
   },
   "engines": {
     "node": ">=18.0.0",
-    "pnpm": ">=8.0.0"
+    "pnpm": ">=8.0.0",
+    "npm": ">=8.0.0"
   },
   "devDependencies": {
     "@types/node": "^20.11.25",

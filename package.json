@@ -2,8 +2,8 @@
   "name": "django-react",
   "version": "1.0.0",
   "scripts": {
-    "bootstrap": "cd src/ui && pnpm install",
-    "collect": "cd src/ui && pnpm collect"
+    "bootstrap": "npm install --prefix src/ui",
+    "collect": "npm run collect --prefix src/ui"
   },
   "keywords": [],
   "author": "",
