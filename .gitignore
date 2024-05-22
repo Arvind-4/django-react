@@ -105,3 +105,5 @@ dmypy.json
 .pyre/
 .pytype/
 cython_debug/
+staticfiles_build/
+include/
