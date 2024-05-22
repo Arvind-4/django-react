@@ -1,0 +1,11 @@
+{
+  "name": "django-react",
+  "version": "1.0.0",
+  "scripts": {
+    "bootstrap": "cd src/ui && pnpm install",
+    "collect": "cd src/ui && pnpm collect"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
