@@ -33,6 +33,7 @@ mkdir django-react
 cd django-react
 git clone https://github.com/Arvind-4/django-react.git .
 ```
+
 - Create Virtual Environment for Python
 
 ```bash
@@ -60,17 +61,57 @@ cd src
 poetry install
 ```
 
+- Generate the secret key
+
+```bash
+python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
+```
+
+- Create a `.env` file and copy the contents of the `.env.sample` file into it
+
+```properties
+# Django settings
+DJANGO_DEBUG=False
+DJANGO_LIVE=0
+DJANGO_SECRET_KEY=your_secret_key
+DJANGO_ALLOWED_HOSTS=*
+DJANGO_ADMIN_URL=admin
+DJANGO_EMAIL_HOST_USER=your_email
+DJANGO_EMAIL_HOST_PASSWORD=your_password
+DJANGO_VERCEL=1
+DJANGO_IN_REACT=1
+
+# Django superuser credentials
+DJANGO_SUPERUSER_PASSWORD=admin
+DJANGO_SUPERUSER_USERNAME=admin
+DJANGO_SUPERUSER_EMAIL=admin@gmail.com
+
+# Gunicorn settings
+GUNICORN_PORT=8000
+GUNICORN_WORKERS=4
+GUNICORN_TIMEOUT=120
+GUNICORN_LOG_LEVEL=INFO
+
+# Email settings
+DJANGO_EMAIL_PORT=
+DJANGO_EMAIL_USE_TLS=
+DJANGO_EMAIL_HOST_USER=
+DJANGO_EMAIL_HOST_PASSWORD=
+
+# HSTS settings
+DJANGO_HSTS_SECONDS=
+```
+
 - Make Migrations
 
 ```bash
-cd src
 python manage.py makemigrations
 python manage.py migrate
 ```
+
 - Run Server
 
 ```bash
-cd src
 python manage.py runserver
 ```
 
@@ -85,13 +126,11 @@ pnpm i
 - Run Vite
 
 ```bash
-cd src/ui
 pnpm dev
 ```
 
 - For production 
 
 ```bash
-cd src/ui
 pnpm collectstatic
 ```
